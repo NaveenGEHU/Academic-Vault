@@ -1,1 +1,0 @@
-Academic-Vault is a Java-based project designed for academic learning and development. Built with Gradle and Kotlin DSL, it provides a structured environment for managing academic materials and resources. Features modern build tooling, organized structure with dedicated app module, and professional version control setup.

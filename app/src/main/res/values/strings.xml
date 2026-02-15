@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">AcademicVault</string>
+    <string name="academic_vault">Academic Vault</string>
+    <string name="button">Button</string>
 </resources>
