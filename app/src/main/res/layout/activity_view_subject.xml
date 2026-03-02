@@ -165,76 +165,13 @@
 
                 </LinearLayout>
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/notescard"
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/notes_recycleview"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="6dp"
-                    android:background="@color/white"
-                    android:padding="5dp"
-                    app:cardCornerRadius="7dp"
-                    app:cardElevation="3dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@color/white"
-                        android:orientation="vertical"
-                        android:padding="7dp">
-
-                        <LinearLayout
-                            android:id="@+id/name_layout"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:id="@+id/note_title"
-                                android:layout_width="345dp"
-                                android:layout_height="wrap_content"
-                                android:background="@color/white"
-                                android:padding="6dp"
-                                android:text="Intoduction to array"
-                                android:textColor="@color/black" />
-
-                            <ImageView
-                                android:id="@+id/imageView3"
-                                android:layout_width="match_parent"
-                                android:layout_height="21dp"
-                                app:srcCompat="@drawable/icon_notes2" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:id="@+id/metadata"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@color/white"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:id="@+id/note_dateofupload"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:background="@color/white"
-                                android:padding="6dp"
-                                android:text="Jan ,15 ,2025"
-                                android:textColor="#716C6C" />
-
-                            <TextView
-                                android:id="@+id/note_sizeofdoc"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:background="@color/white"
-                                android:text="5.6MB"
-                                android:textColor="#716C6C" />
-
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-
+                    android:nestedScrollingEnabled="false"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/document_card" />
             </LinearLayout>
 
             <LinearLayout
@@ -282,75 +219,13 @@
 
                 </LinearLayout>
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/assignmentscard"
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/assignment_recycleview"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="6dp"
-                    android:background="@color/white"
-                    android:padding="5dp"
-                    app:cardCornerRadius="7dp"
-                    app:cardElevation="3dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@color/white"
-                        android:orientation="vertical"
-                        android:padding="7dp">
-
-                        <LinearLayout
-                            android:id="@+id/assignment_name_layout"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:id="@+id/assignment_title"
-                                android:layout_width="345dp"
-                                android:layout_height="wrap_content"
-                                android:background="@color/white"
-                                android:padding="6dp"
-                                android:text="Assignment 1"
-                                android:textColor="@color/black" />
-
-                            <ImageView
-                                android:id="@+id/assignment_menu_icon"
-                                android:layout_width="match_parent"
-                                android:layout_height="21dp"
-                                app:srcCompat="@drawable/icon_notes2" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:id="@+id/assignment_metadata"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@color/white"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:id="@+id/assignment_dateofupload"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:background="@color/white"
-                                android:padding="6dp"
-                                android:text="Feb ,20 ,2025"
-                                android:textColor="#716C6C" />
-
-                            <TextView
-                                android:id="@+id/assignment_sizeofdoc"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:background="@color/white"
-                                android:text="2.3MB"
-                                android:textColor="#716C6C" />
-
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
+                    android:nestedScrollingEnabled="false"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/document_card"/>
 
             </LinearLayout>
 
@@ -365,7 +240,7 @@
                 <LinearLayout
                     android:id="@+id/books_text"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_margin="6dp"
                     android:background="@color/white"
                     android:orientation="horizontal">
@@ -399,75 +274,13 @@
 
                 </LinearLayout>
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/bookscard"
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/book_recycleview"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="6dp"
-                    android:background="@color/white"
-                    android:padding="5dp"
-                    app:cardCornerRadius="7dp"
-                    app:cardElevation="3dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@color/white"
-                        android:orientation="vertical"
-                        android:padding="7dp">
-
-                        <LinearLayout
-                            android:id="@+id/book_name_layout"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:id="@+id/book_title"
-                                android:layout_width="345dp"
-                                android:layout_height="wrap_content"
-                                android:background="@color/white"
-                                android:padding="6dp"
-                                android:text="Book Title 1"
-                                android:textColor="@color/black" />
-
-                            <ImageView
-                                android:id="@+id/book_menu_icon"
-                                android:layout_width="match_parent"
-                                android:layout_height="21dp"
-                                app:srcCompat="@drawable/icon_notes2" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:id="@+id/book_metadata"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@color/white"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:id="@+id/book_dateofupload"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:background="@color/white"
-                                android:padding="6dp"
-                                android:text="Jan ,1 ,2025"
-                                android:textColor="#716C6C" />
-
-                            <TextView
-                                android:id="@+id/book_sizeofdoc"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:background="@color/white"
-                                android:text="10.2MB"
-                                android:textColor="#716C6C" />
-
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
+                    android:nestedScrollingEnabled="false"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/document_card"/>
 
             </LinearLayout>
 
@@ -482,7 +295,7 @@
                 <LinearLayout
                     android:id="@+id/important_text"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_margin="6dp"
                     android:background="@color/white"
                     android:orientation="horizontal">
@@ -516,75 +329,13 @@
 
                 </LinearLayout>
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/importantcard"
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/important_recycleview"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="6dp"
-                    android:background="@color/white"
-                    android:padding="5dp"
-                    app:cardCornerRadius="7dp"
-                    app:cardElevation="3dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@color/white"
-                        android:orientation="vertical"
-                        android:padding="7dp">
-
-                        <LinearLayout
-                            android:id="@+id/important_name_layout"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:id="@+id/important_title"
-                                android:layout_width="345dp"
-                                android:layout_height="wrap_content"
-                                android:background="@color/white"
-                                android:padding="6dp"
-                                android:text="Important Doc 1"
-                                android:textColor="@color/black" />
-
-                            <ImageView
-                                android:id="@+id/important_menu_icon"
-                                android:layout_width="match_parent"
-                                android:layout_height="21dp"
-                                app:srcCompat="@drawable/icon_notes2" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:id="@+id/important_metadata"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@color/white"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:id="@+id/important_dateofupload"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:background="@color/white"
-                                android:padding="6dp"
-                                android:text="Jan ,2 ,2025"
-                                android:textColor="#716C6C" />
-
-                            <TextView
-                                android:id="@+id/important_sizeofdoc"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:background="@color/white"
-                                android:text="1.1MB"
-                                android:textColor="#716C6C" />
-
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
+                    android:nestedScrollingEnabled="false"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/document_card"/>
 
             </LinearLayout>
 
@@ -633,75 +384,13 @@
 
                 </LinearLayout>
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/pyqscard"
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/pyqs_recycleview"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="6dp"
-                    android:background="@color/white"
-                    android:padding="5dp"
-                    app:cardCornerRadius="7dp"
-                    app:cardElevation="3dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@color/white"
-                        android:orientation="vertical"
-                        android:padding="7dp">
-
-                        <LinearLayout
-                            android:id="@+id/pyq_name_layout"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:id="@+id/pyq_title"
-                                android:layout_width="345dp"
-                                android:layout_height="wrap_content"
-                                android:background="@color/white"
-                                android:padding="6dp"
-                                android:text="PYQ 2023"
-                                android:textColor="@color/black" />
-
-                            <ImageView
-                                android:id="@+id/pyq_menu_icon"
-                                android:layout_width="match_parent"
-                                android:layout_height="21dp"
-                                app:srcCompat="@drawable/icon_notes2" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:id="@+id/pyq_metadata"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@color/white"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:id="@+id/pyq_dateofupload"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:background="@color/white"
-                                android:padding="6dp"
-                                android:text="Dec ,25 ,2024"
-                                android:textColor="#716C6C" />
-
-                            <TextView
-                                android:id="@+id/pyq_sizeofdoc"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:background="@color/white"
-                                android:text="4.8MB"
-                                android:textColor="#716C6C" />
-
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
+                    android:nestedScrollingEnabled="false"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/document_card"/>
 
             </LinearLayout>
 
