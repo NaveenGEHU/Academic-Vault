@@ -2,4 +2,12 @@
     <string name="app_name">AcademicVault</string>
     <string name="academic_vault">Academic Vault</string>
     <string name="button">Button</string>
+    <string-array name="doctype">
+        <item>Document Type*</item>
+        <item>Notes</item>
+        <item>Books</item>
+        <item>Assignment</item>
+        <item>Important</item>
+        <item>PYQs</item>
+    </string-array>
 </resources>
