@@ -124,6 +124,7 @@
                 android:layout_gravity="center"
                 android:layout_margin="10dp"
                 android:background="@color/white"
+                android:clickable="true"
                 android:foreground="@drawable/dashed_border"
                 android:padding="8dp"
                 app:cardCornerRadius="12dp"
