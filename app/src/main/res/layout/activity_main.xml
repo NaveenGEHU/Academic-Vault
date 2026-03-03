@@ -23,17 +23,23 @@
             android:background="#FCFFFFFF"
             android:orientation="horizontal">
 
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="63dp"
-                android:layout_height="49dp"
-                android:background="#FCFFFFFF"
-                app:srcCompat="@drawable/logo" />
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                app:cardCornerRadius="10dp">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="54dp"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/logo" />
+            </androidx.cardview.widget.CardView>
 
             <TextView
                 android:id="@+id/textView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_margin="10dp"
                 android:background="#FCFFFFFF"
                 android:gravity="center|left"
@@ -45,235 +51,125 @@
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
-    <LinearLayout
-        android:id="@+id/mysubject"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/textView2"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#EDFFFAFA"
-            android:padding="5dp"
-            android:text="My Subjects"
-            android:textColor="#0F0101"
-            android:textSize="40dp"
-            android:textStyle="normal" />
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/totalsubjects"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#EDFFFAFA"
-                android:padding="5dp"
-                android:text="3"
-                android:textColor="#FE787373"
-                android:textSize="24sp"
-                android:textStyle="normal" />
-
-            <TextView
-                android:id="@+id/texttotalsubject"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#EDFFFAFA"
-                android:padding="5dp"
-                android:text="subjects organized"
-                android:textColor="#FE787373"
-                android:textSize="24sp"
-                android:textStyle="normal" />
-        </LinearLayout>
-    </LinearLayout>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/subjectcard"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:background="#FFFFFF"
-        android:outlineProvider="background"
-        app:cardBackgroundColor="#FFFCFC"
-        app:cardCornerRadius="12dp"
-        app:cardElevation="5dp"
-        app:contentPadding="10dp">
-
-        <LinearLayout
-            android:id="@+id/infolayout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:padding="5dp">
-
-            <ImageView
-                android:id="@+id/image"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:padding="5dp"
-                app:srcCompat="@drawable/book" />
-
-            <TextView
-                android:id="@+id/subjectname"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:text="Java programing"
-                android:textColor="#020202" />
+            android:orientation="vertical">
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/documentcountofsubject"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="left"
-                    android:padding="5dp"
-                    android:text="2"
-                    android:textColor="#FE787373" />
-
-                <TextView
-                    android:id="@+id/textdoc"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:padding="5dp"
-                    android:text="documents"
-                    android:textColor="#FE787373" />
-            </LinearLayout>
-
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:background="#FFFFFF"
-        android:outlineProvider="background"
-        app:cardBackgroundColor="#FFFCFC"
-        app:cardCornerRadius="12dp"
-        app:cardElevation="5dp"
-        app:contentPadding="10dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:padding="5dp">
-
-            <ImageView
-                android:id="@+id/image"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:padding="5dp"
-                app:srcCompat="@drawable/book" />
-
-            <TextView
-                android:id="@+id/subjectname"
+                android:id="@+id/mysubject"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:text="Data Structure"
-                android:textColor="#020202" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_margin="8dp"
+                android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/documentcountofsubject"
+                    android:id="@+id/textView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#EDFFFAFA"
+                    android:padding="5dp"
+                    android:text="My Subjects"
+                    android:textColor="#0F0101"
+                    android:textSize="40dp"
+                    android:textStyle="normal" />
+
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="left"
-                    android:padding="5dp"
-                    android:text="10"
-                    android:textColor="#FE787373" />
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/textdoc"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:padding="5dp"
-                    android:text="documents"
-                    android:textColor="#FE787373" />
+                    <TextView
+                        android:id="@+id/totalsubjects"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="#EDFFFAFA"
+                        android:padding="5dp"
+                        android:text="3"
+                        android:textColor="#FE787373"
+                        android:textSize="24sp"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        android:id="@+id/texttotalsubject"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="#EDFFFAFA"
+                        android:padding="5dp"
+                        android:text="subjects organized"
+                        android:textColor="#FE787373"
+                        android:textSize="24sp"
+                        android:textStyle="normal" />
+                </LinearLayout>
             </LinearLayout>
 
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:background="#FFFFFF"
-        android:outlineProvider="background"
-        app:cardBackgroundColor="#FFFCFC"
-        app:cardCornerRadius="12dp"
-        app:cardElevation="5dp"
-        app:contentPadding="10dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:padding="5dp">
-
-            <ImageView
-                android:id="@+id/image"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:padding="5dp"
-                app:srcCompat="@drawable/book" />
-
-            <TextView
-                android:id="@+id/subjectname"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/subject_recycleview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:text="Finite Automata "
-                android:textColor="#020202" />
+                android:nestedScrollingEnabled="false"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/subject_card" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+            <androidx.cardview.widget.CardView
+                android:id="@+id/addsubjectbtn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:background="@color/white"
+                android:foreground="@drawable/dashed_border"
+                android:padding="8dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="5dp">
 
-                <TextView
-                    android:id="@+id/documentcountofsubject"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="left"
-                    android:padding="5dp"
-                    android:text="5"
-                    android:textColor="#FE787373" />
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:padding="9dp">
 
-                <TextView
-                    android:id="@+id/textdoc"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:padding="5dp"
-                    android:text="documents"
-                    android:textColor="#FE787373" />
-            </LinearLayout>
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|center"
+                        android:layout_margin="8dp"
+                        app:cardCornerRadius="18dp">
+
+                        <ImageView
+                            android:id="@+id/imageView9"
+                            android:layout_width="59dp"
+                            android:layout_height="59dp"
+                            app:srcCompat="@drawable/icon_add" />
+                    </androidx.cardview.widget.CardView>
+
+                    <!--                    <ImageView-->
+                    <!--                        android:id="@+id/imageView5"-->
+                    <!--                        android:layout_width="match_parent"-->
+                    <!--                        android:layout_height="76dp"-->
+                    <!--                        app:srcCompat="@android:drawable/ic_menu_add" />-->
+
+                    <TextView
+                        android:id="@+id/textView11"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="10dp"
+                        android:gravity="center"
+                        android:text="Add Subject"
+                        android:textColor="#716E6E"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
 
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
+    </ScrollView>
 
 </LinearLayout>
