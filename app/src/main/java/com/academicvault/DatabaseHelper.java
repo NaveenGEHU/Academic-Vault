@@ -24,7 +24,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     // Creating subject table SUB_NAME , ID ,DATE
         String createSubjectTable="CREATE TABLE IF NOT EXISTS "+
                 TABLE_SUBJECTS + "( id INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                "subject_name TEXT NOT NULL)";
+                "subject_name TEXT NOT NULL,"+
+                "doc_count INTEGER DEFAULT 0)";
         String createDocumentsTable =" CREATE TABLE IF NOT EXISTS "+
                 TABLE_DOCUMENTS+ " ( id INTEGER PRIMARY KEY AUTOINCREMENT ,"+
                 "title TEXT NOT NULL, "+
@@ -73,12 +74,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put("fileType",dc.getFileType());
         values.put("fileSize",dc.getFileSize());
         values.put("dateAdded",dc.getDateAdded());
+        db.execSQL("UPDATE "+TABLE_SUBJECTS+" SET doc_count=doc_count+1 WHERE id="+dc.getSubjectId());
         return db.insert(TABLE_DOCUMENTS,null,values);
     }
 //    DELETE A DOCUMENT FROM THE DATABASE
-    public void deleteDocument(int id){
+    public void deleteDocument(Document dc){
         SQLiteDatabase db= this.getWritableDatabase();
-        db.delete(TABLE_DOCUMENTS,"id=?",new String[]{String.valueOf(id)});
+        db.delete(TABLE_DOCUMENTS,"id=?",new String[]{String.valueOf(dc.getId())});
+        db.execSQL("UPDATE "+TABLE_SUBJECTS+" SET doc_count=doc_count-1 WHERE id="+dc.getSubjectId());
     }
 //    GET ALL DOCUMENT OF A SUBJECT BY HELP OF SUBJECT ID
     public Cursor getAllDocuments(int subject_id){

@@ -25,11 +25,13 @@ public class Document {
     public void setFileSize(){this.fileSize= fileSize;}
     public void setDateAdded(){this.dateAdded= dateAdded;}
     public void setFileType(){this.fileType= fileType;}
+    public void setId(){this.id= id;}
     public String getTitle(){return title;}
     public int getSubjectId(){return subject_id;}
     public String getFilePath(){return filePath;}
     public String getFileSize(){return fileSize;}
     public String getDateAdded(){return dateAdded;}
     public String getFileType(){return fileType;}
+    public int getId(){return id;}
 
 }
