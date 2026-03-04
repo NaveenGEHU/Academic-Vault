@@ -8,6 +8,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.academicvault.model.Subject;
+
 public class view_subject extends AppCompatActivity {
 
     @Override
@@ -20,5 +22,7 @@ public class view_subject extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        Subject subject = new Subject(getIntent().getIntExtra("subject_id",0),
+                getIntent().getStringExtra("subject_name"), getIntent().getIntExtra("doc_Count",0));
     }
 }

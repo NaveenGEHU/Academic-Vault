@@ -1,4 +1,4 @@
-package com.academicvault;
+package com.academicvault.database;
 
 import android.content.ContentValues;
 import android.content.Context;

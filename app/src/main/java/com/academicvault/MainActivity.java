@@ -11,13 +11,11 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
-import androidx.fragment.app.DialogFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.academicvault.adapter.Subject_Adapter;
-
-import java.util.Objects;
+import com.academicvault.database.DatabaseHelper;
 
 public class MainActivity extends AppCompatActivity {
 //---MEMEBER VARIABLES---

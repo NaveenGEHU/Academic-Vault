@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="4dp">
+    android:layout_margin="4dp"
+    android:clickable="false"
+    android:foreground="?android:attr/selectableItemBackground">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/subjectcard"
@@ -13,6 +15,7 @@
         android:layout_margin="10dp"
         android:background="#FFFFFF"
         android:clickable="true"
+        android:focusable="true"
         android:foreground="@drawable/light_solid_border"
         android:outlineProvider="background"
         app:cardBackgroundColor="#FFFCFC"
@@ -28,18 +31,40 @@
             android:orientation="vertical"
             android:padding="5dp">
 
-            <ImageView
-                android:id="@+id/image"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:padding="5dp"
-                app:srcCompat="@drawable/subject_image" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imagebg"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:padding="5dp"
+                    app:srcCompat="@drawable/subject_image" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/deleteBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="right"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        app:srcCompat="@android:drawable/ic_menu_delete" />
+                </FrameLayout>
+
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/subjectname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="5dp"
+                android:padding="2dp"
                 android:text="Java programing"
                 android:textColor="#020202"
                 android:textSize="18sp"
@@ -55,16 +80,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:gravity="left"
-                    android:padding="5dp"
+                    android:gravity="center"
                     android:text="2"
                     android:textColor="#FE787373" />
 
                 <TextView
                     android:id="@+id/textdoc"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="start"
                     android:padding="5dp"
                     android:text="documents"
                     android:textColor="#FE787373" />
