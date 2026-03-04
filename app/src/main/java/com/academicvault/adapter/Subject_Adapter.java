@@ -3,11 +3,14 @@ package com.academicvault.adapter;
 import android.content.Context;
 import android.database.Cursor;
 import android.text.style.BackgroundColorSpan;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.academicvault.R;
@@ -43,6 +46,24 @@ public class Subject_Adapter extends RecyclerView.Adapter<Subject_Adapter.ViewHo
         Subject subject = subjects.get(position);
         holder.subjectName.setText(subject.getName());
         holder.docCount.setText(String.valueOf(subject.getDocCount()));
+
+//----------------------MAKING THE CARD CLCIKABLE--------------------------------------
+        try {
+                holder.subjectcard.setOnClickListener(v -> {
+                Toast.makeText(context,
+                        "CARD CLICKED", Toast.LENGTH_LONG).show();
+                android.content.Intent intent = new android.content.Intent(context, com.academicvault.view_subject.class);
+                //           PASSING THE SUBJECT DETAIL TO THE NEXT ACTIVITY
+                intent.putExtra("subject_id", subject.getId());
+                intent.putExtra("subject_name", subject.getName());
+                intent.putExtra("doc_Count", subject.getDocCount());
+                //            STARTS THE NEXT ACTIVITY
+                context.startActivity(intent);
+            });
+        } catch (Exception e) {
+            Log.e("CARD EVENTCLICKING", "Error occurred: ", e);
+            Toast.makeText(context,e.getMessage(), Toast.LENGTH_LONG).show();
+        }
     }
 
     public int getItemCount() {
@@ -50,6 +71,7 @@ public class Subject_Adapter extends RecyclerView.Adapter<Subject_Adapter.ViewHo
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
+        CardView subjectcard;
         TextView subjectName;
         TextView docCount;
         BackgroundColorSpan BgColor; // need to be set to get different color in the book icon in background
@@ -58,6 +80,7 @@ public class Subject_Adapter extends RecyclerView.Adapter<Subject_Adapter.ViewHo
             super(itemView);
             subjectName = itemView.findViewById(R.id.subjectname);
             docCount = itemView.findViewById(R.id.documentcountofsubject);
+            subjectcard=itemView.findViewById(R.id.subjectcard);
         }
     }
 }
