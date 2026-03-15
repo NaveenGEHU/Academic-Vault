@@ -1,160 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/add_document_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    android:padding="0dp"
+    android:background="@color/background"
     tools:context=".add_Document">
 
-    <LinearLayout
-        android:id="@+id/mainContainer"
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/white"
-        android:orientation="vertical"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="10dp">
+        android:layout_height="wrap_content"
+        android:background="@color/background"
+        app:elevation="0dp">
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/headerCard"
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:padding="3dp"
-            app:cardBackgroundColor="@color/white"
-            app:cardElevation="5dp">
+            android:layout_height="?attr/actionBarSize"
+            app:navigationIcon="@drawable/abc_ic_ab_back_material"
+            app:navigationIconTint="@color/onSurface">
 
             <TextView
-                android:id="@+id/headerText"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginLeft="7dp"
-                android:background="@color/white"
-                android:gravity="left|center_vertical"
-                android:padding="5dp"
-                android:text="Upload Documnet"
-                android:textColor="@color/black"
-                android:textSize="21sp" />
-        </androidx.cardview.widget.CardView>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Upload Document"
+                android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+                android:textStyle="bold" />
+        </com.google.android.material.appbar.MaterialToolbar>
 
-        <TextView
-            android:id="@+id/descriptionText"
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="12dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="12dp"
-            android:layout_marginBottom="20dp"
-            android:padding="8dp"
-            android:text="Add a new document to  to subject"
-            android:textColor="@color/black"
-            android:textSize="15sp" />
+            android:orientation="vertical"
+            android:padding="16dp">
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/uploadDocBtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-            android:background="@color/white"
-            android:foreground="@drawable/dashed_border"
-            app:cardBackgroundColor="@color/white"
-            app:cardCornerRadius="14dp">
-
-            <LinearLayout
-                android:id="@+id/uploadInnerLayout"
+            <TextView
+                android:id="@+id/descriptionText"
                 android:layout_width="match_parent"
-                android:layout_height="172dp"
-                android:orientation="vertical">
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:text="Add a new document to subject"
+                android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+                android:textColor="@color/onSurfaceVariant" />
 
-                <ImageView
-                    android:id="@+id/uploadIcon"
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:layout_marginTop="50dp"
-                    android:padding="15dp"
-                    app:srcCompat="@drawable/icon_upload" />
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/uploadDocBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardBackgroundColor="@color/surfaceVariant"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp">
 
-                <TextView
-                    android:id="@+id/uploadInstruction"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="200dp"
                     android:gravity="center"
-                    android:paddingBottom="18dp"
-                    android:text="Tap to select document"
-                    android:textColor="@color/black"
-                    android:textSize="17sp" />
-            </LinearLayout>
+                    android:orientation="vertical"
+                    android:foreground="@drawable/dashed_border">
 
-        </androidx.cardview.widget.CardView>
+                    <ImageView
+                        android:id="@+id/uploadIcon"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:src="@android:drawable/ic_menu_upload"
+                        app:tint="@color/primary" />
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/titleCard"
-            android:layout_width="match_parent"
-            android:layout_height="61dp"
-            android:layout_marginLeft="12dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginRight="12dp"
-            android:background="@color/white"
-            android:foreground="@drawable/solid_border"
-            android:outlineProvider="none"
-            app:cardBackgroundColor="@color/white"
-            app:cardCornerRadius="15dp">
+                    <TextView
+                        android:id="@+id/uploadInstruction"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:paddingHorizontal="24dp"
+                        android:text="Tap to select document"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+                        android:textColor="@color/onSurfaceVariant" />
+                </LinearLayout>
 
-            <EditText
-                android:id="@+id/docTitle"
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#00FFFFFF"
-                android:gravity="center|left"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
                 android:hint="Document Title*"
-                android:inputType="text"
-                android:padding="5dp"
-                android:textColor="@color/black"
-                android:textColorHint="#858282"
-                android:textSize="18sp" />
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
 
-        </androidx.cardview.widget.CardView>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/docTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapWords" />
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/typeCard"
-            android:layout_width="match_parent"
-            android:layout_height="58dp"
-            android:layout_marginLeft="12dp"
-            android:layout_marginTop="13dp"
-            android:layout_marginRight="12dp"
-            android:background="@color/white"
-            android:foreground="@drawable/solid_border"
-            android:outlineProvider="none"
-            android:padding="0dp"
-            app:cardBackgroundColor="@color/white"
-            app:cardCornerRadius="15dp">
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <Spinner
-                android:id="@+id/docTypeSpinner"
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:entries="@array/doctype"
-                android:spinnerMode="dropdown" />
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
+                android:hint="Category"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
 
-        </androidx.cardview.widget.CardView>
+                <AutoCompleteTextView
+                    android:id="@+id/docTypeSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    app:simpleItems="@array/doctype" />
 
-        <Button
-            android:id="@+id/finalUploadBtn"
-            android:layout_width="match_parent"
-            android:layout_height="65dp"
-            android:layout_marginLeft="12dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginRight="12dp"
-            android:text="Upload Document"
-            android:textColor="#FBFAFA"
-            android:textColorLink="#AB3232"
-            android:textSize="20sp"
-            app:cornerRadius="9dp"
-            app:rippleColor="@color/black" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-    </LinearLayout>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/finalUploadBtn"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:text="Upload Document"
+                app:cornerRadius="16dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

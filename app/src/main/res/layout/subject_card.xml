@@ -1,99 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/subjectcard"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="4dp"
-    android:clickable="false"
-    android:foreground="?android:attr/selectableItemBackground">
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="8dp"
+    android:clickable="true"
+    android:focusable="true"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="0dp"
+    app:strokeColor="@color/outline"
+    app:strokeWidth="1dp">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/subjectcard"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:background="#FFFFFF"
-        android:clickable="true"
-        android:focusable="true"
-        android:foreground="@drawable/light_solid_border"
-        android:outlineProvider="background"
-        app:cardBackgroundColor="#FFFCFC"
-        app:cardCornerRadius="12dp"
-        app:cardElevation="0dp"
-        app:contentPadding="10dp"
-        tools:layout_editor_absoluteX="10dp">
+        android:padding="16dp">
 
-        <LinearLayout
-            android:id="@+id/infolayout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:padding="5dp">
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/iconContainer"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            app:cardBackgroundColor="@color/secondaryContainer"
+            app:cardCornerRadius="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeWidth="0dp">
 
-            <LinearLayout
+            <ImageView
+                android:id="@+id/imagebg"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/white"
-                android:orientation="horizontal">
+                android:padding="10dp"
+                android:src="@drawable/subject_image"
+                app:tint="@color/onSecondaryContainer" />
+        </com.google.android.material.card.MaterialCardView>
 
-                <ImageView
-                    android:id="@+id/imagebg"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:padding="5dp"
-                    app:srcCompat="@drawable/subject_image" />
+        <TextView
+            android:id="@+id/subjectname"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="8dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="Java Programming"
+            android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+            android:textColor="@color/onSurface"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/deleteBtn"
+            app:layout_constraintStart_toEndOf="@id/iconContainer"
+            app:layout_constraintTop_toTopOf="@id/iconContainer" />
 
-                <FrameLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <ImageView
-                        android:id="@+id/deleteBtn"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="right"
-                        android:layout_weight="1"
-                        android:clickable="true"
-                        app:srcCompat="@android:drawable/ic_menu_delete" />
-                </FrameLayout>
-
-            </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="@id/subjectname"
+            app:layout_constraintTop_toBottomOf="@id/subjectname">
 
             <TextView
-                android:id="@+id/subjectname"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="2dp"
-                android:text="Java programing"
-                android:textColor="#020202"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <LinearLayout
+                android:id="@+id/documentcountofsubject"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:text="12"
+                android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+                android:textColor="@color/onSurfaceVariant" />
 
-                <TextView
-                    android:id="@+id/documentcountofsubject"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="2"
-                    android:textColor="#FE787373" />
-
-                <TextView
-                    android:id="@+id/textdoc"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="start"
-                    android:padding="5dp"
-                    android:text="documents"
-                    android:textColor="#FE787373" />
-            </LinearLayout>
-
+            <TextView
+                android:id="@+id/textdoc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="documents"
+                android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+                android:textColor="@color/onSurfaceVariant" />
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageButton
+            android:id="@+id/deleteBtn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Delete"
+            android:src="@android:drawable/ic_menu_delete"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/outline" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
