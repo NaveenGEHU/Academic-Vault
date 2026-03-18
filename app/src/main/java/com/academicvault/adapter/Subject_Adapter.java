@@ -50,7 +50,7 @@ public class Subject_Adapter extends RecyclerView.Adapter<Subject_Adapter.ViewHo
 //----------------------MAKING THE CARD CLCIKABLE--------------------------------------
         try {
                 holder.subjectcard.setOnClickListener(v -> {
-                Toast.makeText(context,
+                Toast.makeText(context, // THIS IS TEST
                         "CARD CLICKED", Toast.LENGTH_LONG).show();
                 android.content.Intent intent = new android.content.Intent(context, com.academicvault.view_subject.class);
                 //           PASSING THE SUBJECT DETAIL TO THE NEXT ACTIVITY

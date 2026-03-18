@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.academicvault.adapter.Subject_Adapter;
 import com.academicvault.database.DatabaseHelper;
+import com.academicvault.model.Folder;
 
 public class MainActivity extends AppCompatActivity {
 //---MEMEBER VARIABLES---
@@ -48,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 //-----------------------------Insert the subject in the database----------------------------------------
-    private boolean insert(String subName){
+    private long insert(String subName){
         if(subName.isEmpty()){
             Toast.makeText(this,"Subject Name cannot be empty",Toast.LENGTH_SHORT).show();
         }
@@ -57,14 +58,15 @@ public class MainActivity extends AppCompatActivity {
             if (id != 0) {
                 Toast.makeText(this, "Subject Added", Toast.LENGTH_SHORT).show();
                 load();
-                return true;
+                return id;
             } else {
                 Toast.makeText(this, "Subject Not Added", Toast.LENGTH_SHORT).show();
-                return false;
+                return 0;
             }
         }
-        return false;
+        return 0;
     }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,8 +88,9 @@ public class MainActivity extends AppCompatActivity {
                     Button addBtn=dialogBox.findViewById(R.id.add_btn);
                     addBtn.setOnClickListener(y-> {
                         EditText subName=dialogBox.findViewById(R.id.subject_name_input);
-                        boolean success=insert(subName.getText().toString().trim());
-                        if(success){
+                        long subjectId=insert(subName.getText().toString().trim());
+                        if(subjectId!=0){
+                            Folder.createSubjectFolder(this,subjectId); // creating folder by name of subject id
                             dialog.dismiss();
                         }
                     });
@@ -101,16 +104,6 @@ public class MainActivity extends AppCompatActivity {
             Log.e("DATABASE_ERROR", "Error occurred: ", e);
             Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
         }
-
-
-        try{}
-        catch (Exception e) {
-            Log.e("ERRROR", "Error occurred: ", e);
-            Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
-        }
-
-
-
     }
 
 

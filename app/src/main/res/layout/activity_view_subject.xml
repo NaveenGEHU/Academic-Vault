@@ -88,6 +88,7 @@
                 android:orientation="vertical">
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/uploadButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="6dp"
@@ -97,7 +98,6 @@
                     app:cardCornerRadius="20dp">
 
                     <TextView
-                        android:id="@+id/uploadButton"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="1dp"

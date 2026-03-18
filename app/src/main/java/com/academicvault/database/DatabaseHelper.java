@@ -80,7 +80,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 //    DELETE A DOCUMENT FROM THE DATABASE
     public void deleteDocument(Document dc){
         SQLiteDatabase db= this.getWritableDatabase();
-        db.delete(TABLE_DOCUMENTS,"id=?",new String[]{String.valueOf(dc.getId())});
+        db.delete(TABLE_DOCUMENTS,"id=?",new String[]{String.valueOf(dc.getDocId())});
         db.execSQL("UPDATE "+TABLE_SUBJECTS+" SET doc_count=doc_count-1 WHERE id="+dc.getSubjectId());
     }
 //    GET ALL DOCUMENT OF A SUBJECT BY HELP OF SUBJECT ID
